@@ -1,8 +1,10 @@
+
 class Model {
   late int? id;
   late final String? title;
 late final String? desc;
 late final String? dateTime;
+
 
 Model({this.id,this.title, this.desc,this.dateTime});
 Model.fromMap( Map<String,dynamic> res):

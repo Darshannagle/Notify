@@ -1,3 +1,4 @@
+import 'package:dan_notes_saver/add_update_screen.dart';
 import 'package:dan_notes_saver/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -11,11 +12,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false
-      ,
+    return MaterialApp(debugShowCheckedModeBanner: false,
+initialRoute: '/homeScreen',
+      routes: {
+        '/addUpdate' : (context) => AddUpdateTask(),
+        '/homeScreen' :(context) => HomeScreen(),
+      },
+
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.purpleAccent
+        ),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'DAN_Notes_'),

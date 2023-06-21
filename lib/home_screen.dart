@@ -1,10 +1,10 @@
-import 'package:dan_notes_saver/add_update_screen.dart';
+
 import 'package:dan_notes_saver/db_handler.dart';
 import 'package:flutter/material.dart';
 
 import 'model.dart';
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+   HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -28,7 +28,7 @@ loadData();
     return Scaffold(
 
       appBar: AppBar( centerTitle: true,elevation: 0,
-       title: const Text('DAN_Notes',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,letterSpacing: 1),),actions: [Padding(padding: EdgeInsets.only(right: 10),child: Icon(Icons.help_center_rounded,size: 30,),)],),
+       title:  Text('DAN_Notes',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,letterSpacing: 1),),actions: [Padding(padding: EdgeInsets.only(right: 10),child: Icon(Icons.help_center_rounded,size: 30,),)],),
   body: Column(children: [Expanded(child:FutureBuilder(
     builder: (context,AsyncSnapshot<List<Model>> snapshot){
       if(!(snapshot.hasData)|| snapshot.data==null){
@@ -50,15 +50,15 @@ dataList= dBhelper!.getDatalist();
 snapshot.data!.remove(snapshot.data![index]);
             });
 
-          },child: Container(margin: const EdgeInsets.all(5),decoration: BoxDecoration(color: Colors.yellowAccent,boxShadow: [BoxShadow(color: Colors.black12,blurRadius: 4,spreadRadius: 4)]),child: Column(children: [
+          },child: Container(margin:  EdgeInsets.all(15),decoration: BoxDecoration(borderRadius: BorderRadius.circular(5),color: Colors.yellowAccent,boxShadow: [BoxShadow(color: Colors.black12,blurRadius: 5,spreadRadius: 5)]),child: Column(children: [
             ListTile(contentPadding: EdgeInsets.all(10),title: Padding(padding: EdgeInsets.only(bottom: 10),child: Text(toTitle,style: TextStyle(fontSize: 15),),),subtitle: Text(toDesc,style: TextStyle(fontSize: 16),
             ),
-            ),Divider(color: Colors.black,thickness: 0.8,),Padding(padding: EdgeInsets.symmetric(vertical: 3,horizontal: 10),child: Row(
+            ),Divider(color: Colors.black,thickness: 0.8,),Padding(padding: EdgeInsets.symmetric(vertical: 10,horizontal: 10),child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [Text(toDT,style: TextStyle(fontSize: 14,fontWeight:  FontWeight.w400,fontStyle: FontStyle.italic)
                 ,),InkWell(onTap: (){
 
-              },child: Icon(Icons.edit_note,size: 28,color: Colors.green,),)],
+              },child: IconButton(icon:Icon(Icons.edit_note,size: 28,color: Colors.green), onPressed: (){Navigator.pushNamed(context,'/addUpdate' );},),)],
             ),),
           ],),),);
         },);
@@ -67,7 +67,7 @@ snapshot.data!.remove(snapshot.data![index]);
     },
     future: dataList,
   ) )],), floatingActionButton: FloatingActionButton(onPressed: (){
-    Navigator.push(context,MaterialPageRoute(builder: (context)=>AddUpdateTask()));
+Navigator.pushNamed(context,'/addUpdate');
     },child: Icon(Icons.add),), );
   }
 }

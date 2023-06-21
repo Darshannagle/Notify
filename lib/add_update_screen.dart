@@ -1,5 +1,4 @@
 import 'package:dan_notes_saver/db_handler.dart';
-import 'package:dan_notes_saver/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -48,14 +47,17 @@ dBhelper = DBhelper();
           ),)],) ),SizedBox(height: 40,),
       Container(
         width: MediaQuery.of(context).size.width,
-        child: Row(
+        child: Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [Material(color: Colors.green,borderRadius: BorderRadius.circular(5),child: InkWell(onTap: (){
             if(fromkey.currentState!.validate()){
               dBhelper!.insert(Model(title: titleController.text,desc: descController.text,dateTime: DateFormat('ymd').add_jm().format(DateTime.now()).toString()));
-Navigator.push(context,MaterialPageRoute(builder: (context)=> HomeScreen()));
+Navigator.pushNamedAndRemoveUntil(context, '/homeScreen', (route) => false);
+  // context, '/homeScreen',);
+
 titleController.clear();
 descController.clear();
 print('date added');
+
             }
           },child: Container(alignment: Alignment.center,
             margin: EdgeInsets.symmetric(horizontal: 20,),
@@ -65,6 +67,8 @@ print('date added');
                 boxShadow: [const BoxShadow(color: Colors.black12,blurRadius: 5,spreadRadius: 1)],),child: Text('Submit',style: TextStyle(fontSize: 22,fontWeight: FontWeight.w500),),),),),
             Material(color: Colors.red[800],borderRadius: BorderRadius.circular(5),child: InkWell(onTap: (){setState(() { titleController.clear();
               descController.clear();
+
+
 
             });},child: Container(alignment: Alignment.center,
               margin: EdgeInsets.symmetric(horizontal: 20 ,),
