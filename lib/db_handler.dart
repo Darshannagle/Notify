@@ -1,5 +1,5 @@
 import 'dart:io' as io;
-import 'package:dan_notes_saver/model.dart';
+import 'package:notify/model.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';

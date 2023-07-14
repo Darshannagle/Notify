@@ -1,4 +1,4 @@
-import 'package:dan_notes_saver/db_handler.dart';
+import 'package:notify/db_handler.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 

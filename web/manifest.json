@@ -1,6 +1,6 @@
 {
-    "name": "dan_notes_saver",
-    "short_name": "dan_notes_saver",
+    "name": "notify",
+    "short_name": "notify",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

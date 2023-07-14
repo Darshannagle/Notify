@@ -1,4 +1,4 @@
-# dan_notes_saver
+# notify
 
 A new Flutter project for Notes .
 

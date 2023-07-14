@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "dan_notes_saver" "\0"
+            VALUE "FileDescription", "notify" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "dan_notes_saver" "\0"
+            VALUE "InternalName", "notify" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "dan_notes_saver.exe" "\0"
-            VALUE "ProductName", "dan_notes_saver" "\0"
+            VALUE "OriginalFilename", "notify.exe" "\0"
+            VALUE "ProductName", "notify" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

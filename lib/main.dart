@@ -1,5 +1,5 @@
-import 'package:dan_notes_saver/add_update_screen.dart';
-import 'package:dan_notes_saver/home_screen.dart';
+import 'package:notify/add_update_screen.dart';
+import 'package:notify/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
